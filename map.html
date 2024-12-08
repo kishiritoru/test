@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="">テストで作ったマップだよ</a>
+            <li><a href="./index.html">戻る</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+ <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+<link rel="stylesheet" href="mozi.css">
+
+
+
+  <style>
+    /* 地図の表示領域のスタイル */
+    #map {
+      height: 700px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Leafletで日本地図を表示</h2>
+  <div id="map"></div>
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+ 
+
+  <script>
+    // 地図を表示する要素の初期化
+    var map = L.map('map').setView([35.682839, 139.759455], 14); // 緯度, 経度, ズームレベル
+
+    // OpenStreetMapのタイルレイヤーを追加
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // サンプルのマーカー（東京）を追加
+    L.marker([35.71366835962503, 139.77613130188482]).addTo(map)
+      .bindPopup('ここ上野駅ね')
+      .openPopup();
+    L.marker([35.612805966761215, 140.11372769961613]).addTo(map)
+      .bindPopup('千葉駅だ')
+      .openPopup();
+  </script>
+
+</body>
+</html>
