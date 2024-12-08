@@ -1,0 +1,11 @@
+/* ポップアップ内の文字サイズを大きくする */
+.leaflet-popup-content {
+    font-size: 18px; /* 文字サイズを大きくする */
+    font-weight: bold; /* 文字を太字にする（任意） */
+  }
+  
+  /* ポップアップのタイトルを調整する場合 */
+  .leaflet-popup-content-wrapper {
+    padding: 10px; /* ポップアップ内の余白を調整 */
+  }
+  
