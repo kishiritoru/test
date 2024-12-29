@@ -1,0 +1,408 @@
+/* 共通スタイル */
+body {
+  background-color: #FFFFFF; 
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  /* 以下の2つを追加 */
+  max-width: 100%; /* 横幅をビューポートに制限 */
+  overflow-x: hidden; /* 横スクロールを無効化 */
+}
+
+/* ヘッダー部分 */
+.site-header {
+  background-color: #0082CA; 
+  color: #FFFFFF;
+  padding:  calc(env(safe-area-inset-top) + 10px) 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+  padding-top: env(safe-area-inset-top); /* セーフエリアを考慮してパディングを追加 */
+}
+
+
+/* ハンバーガーメニューボタン */
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 40px;
+  position: absolute; 
+  top: 10px;
+  right: 10px; 
+}
+
+.menu-button span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #fff; /* 白色 */
+  border-radius: 2px;
+}
+
+
+/* ロゴのスタイル */
+.logo img {
+  height: 50px; /* ロゴ画像の高さ */
+  margin-right: 20px; /* タイトルとの間隔 */
+}
+
+/* サイトタイトル */
+.site-title {
+  margin: 0; /* 左詰め */
+  font-size: 1.5rem; /* フォントサイズ */
+  font-weight: bold; /* 太字に設定 */
+  text-align: left;
+  position: absolute; /* これを追加 */
+  left: 10px; /* これを追加 */
+}
+
+/* サブタイトル */
+.site-subtitle {
+  display: block; /* サブタイトルをブロック要素にする */
+  font-size: 0.5rem; /* サブタイトルのフォントサイズを小さく */
+  font-weight: normal; /* サブタイトルは軽いフォントに */
+  color: #ffffff; /* サブタイトルの文字色（背景に合わせて調整） */
+  margin-bottom: 2px; /* タイトルとの間に余白を設定 */
+}
+
+/* ボタン部分 */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-button {
+  text-decoration: none;
+  margin-top: 50px; 
+  color: #FFFFFF;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+
+/* 楕円ボタンのスタイル */
+.oval {
+  background-color: #FFFFFF; /* 白背景 */
+  color: #000000; /* 黒文字 */
+  border-radius: 50px; /* 楕円形 */
+  border: 2px solid #CCCCCC; /* 灰色の枠線 */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex; /* フレックスボックスで画像と文字を横並びに */
+  align-items: center; /* 垂直方向に中央揃え */
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影 */
+  gap: 10px; /* 画像と文字の間隔 */
+}
+
+/* ボタン内の画像スタイル */
+.button-icon {
+  width: 20px; /* 画像の横幅 */
+  height: auto; /* 画像の高さ */
+  display: inline-block; /* サイズ指定を有効に */
+  margin-right: 10px; /* 文字との間隔を調整 */
+}
+
+
+.map-icon {
+  height: 29px; /* 高さを明示的に指定 */
+}
+
+/* Event Icon専用のスタイル */
+.event-icon {
+  width: 30px; /* 横幅を30pxに設定 */
+  height: 23px; /* 高さを23pxに設定 */
+}
+
+/* ボタンのホバー時のスタイル */
+.oval:hover {
+  background-color: #F0F0F0; /* ホバー時の少し濃い白 */
+  color: #007BFF; /* ホバー時の文字色（青） */
+  border-color: #007BFF; /* ホバー時の枠線色 */
+}
+
+
+/* マップ部分 */
+.map-container {
+  padding: 20px;
+}
+
+.map {
+  height: 500px;
+  background-color: #EEE;
+}
+
+/* イベント部分 */
+.events-container {
+  padding: 20px;
+}
+
+.event-item {
+  padding: 10px;
+  border: 1px solid #CCC;
+  margin-bottom: 10px;
+}
+
+/* ハンバーガーメニューボタンのスタイル */
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+}
+
+/* サイドメニューの閉じるボタン */
+.close-button {
+  position: absolute;
+  top: 10px; /* メニュー内の上端 */
+  right: 275px; /* メニュー内の左端 */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff; /* ボタンの色 */
+}
+
+/* オーバーレイ（メニュー画面外の薄暗い背景） */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+  z-index: 999; /* メニューより下、ボタンより上 */
+  opacity: 0; /* 初期状態では透明 */
+  visibility: hidden; /* 初期状態では非表示 */
+  transition: opacity 0.3s ease; /* スムーズなアニメーション */
+}
+
+/* オーバーレイ表示時 */
+.overlay.active {
+  opacity: 1; /* 薄暗い背景を表示 */
+  visibility: visible; /* 表示状態にする */
+}
+
+.menu-button span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff; /* ハンバーガーボタンの色 */
+  border-radius: 2px;
+}
+
+/* サイドメニューのスタイル */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* 初期状態では画面外 */
+  width: 250px;
+  height: 100%;
+  background-color: #E1F5FE; /* メニューバーの背景色 */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease; /* アニメーション */
+  z-index: 1000;
+  padding: 20px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu ul li {
+  margin-bottom: 20px;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.side-menu.open {
+  right: 0; /* メニューが開いた状態 */
+}
+
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .menu-button {
+    width: 50px; /* スマホでのボタン幅を広げる */
+    right: 5px;
+  }
+
+  .menu-button span {
+    height: 5px; /* 横線の太さを少し太くする */
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 100vw;
+  }
+  
+}
+
+ /* 旅行プラン提案画面 */
+  .plan-container h1 {
+    font-size: 1.3rem;　 /* 見出しのサイズ */
+    text-align: left; 
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+.plan-description {
+  margin-top: 20px; /* カルーセルとの余白 */
+  padding: 10px;
+}
+
+.decorative-line {
+  position: relative;
+  width: calc(100% - 20px); /* 両端10pxを除く */
+  height: 2px; /* 線の高さ */
+  background-color: #E6E6E6; /* 薄い灰色の線 */
+  margin: 15px auto; /* 上下の余白と中央揃え */
+}
+
+.blue-highlight {
+  position: absolute;
+  top: 0;
+  left: 0; /* 親要素の左端から開始 */
+  width: 180px; /* 青い部分の幅 */
+  height: 2px; /* 青い部分の高さ */
+  background-color: #0082CA; /* 青色 */
+}
+
+
+.plan-description h2 {
+  font-size: 1.3rem; /* 見出しのサイズ */
+  margin-top: 10px;
+  text-align: left; 
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.plan-description p {
+  font-size: 1rem; /* 段落の文字サイズ */
+  line-height: 1.6; /* 行間を調整 */
+  color: #333; /* 文字色 */
+  text-align: left; 
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+
+/* カルーセルの調整 */
+.swiper-container {
+  width: 100%; /* カルーセルの幅 */
+  height: 300px; /* 高さ */
+  margin-top: -5px;
+  overflow: hidden; /* 横スクロールを防ぐ */
+  max-width: 100%; /* 画面幅を超えないようにするこれを追加 */
+  padding-bottom: 30px;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #333;
+  overflow: hidden; /* スライドからはみ出た部分は隠す */
+}
+
+.slide-image {
+  width: 100%; /* 画像の幅をスライドに合わせる */
+  height: 100%; /* アスペクト比を維持 */
+  object-fit: cover; /* 画像をスライドにフィットさせる */
+  border-radius: 10px; /* 画像の角を丸める（任意） */
+}
+
+.swiper-wrapper {
+  width: 100%;
+}
+
+.swiper-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; /* ページネーションとスライド間の余白 */
+  position: relative; /* 子要素の配置に影響を与える */
+  width: 100%;
+}
+
+.swiper-pagination {
+  flex: 1; /* ページネーションを中央に広げる */
+  text-align: center;
+  position: relative; /* スライドの下に配置 */
+  margin-top: 5px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #0082CA; /* ボタンの色 */
+  font-size: 18px; /* ボタンサイズ */
+  cursor: pointer;
+}
+
+/* 検索ボタン */
+.plan-filters {
+  display: flex;
+  flex-direction: column; /* ボタンを縦に並べる */
+  align-items: center; /* 中央揃え */
+  margin-top: 20px; /* 上部に余白 */
+}
+
+.filter-button {
+  width: 80%; /* ボタンの横幅 */
+  max-width: 400px; /* ボタンの最大幅 */
+  padding: 15px; /* ボタンの上下左右の余白 */
+  margin-bottom: 10px; /* ボタン同士の間隔 */
+  font-size: 1.2rem; /* ボタン内の文字サイズ */
+  background-color: #FFFFFF; /* ボタンの背景色 */
+  color: #000000; /* ボタンの文字色 */
+  border: 1px solid #000000; /* 黒の枠線 */
+  border-radius: 8px; /* ボタンの角を丸める */
+  cursor: pointer; /* カーソルをポインタに変更 */
+  text-align: center; /* 文字を中央揃え */
+  display: flex; 
+  justify-content: flex-start; /* これを変更 */
+  align-items: center; 
+  gap: 10px; 
+}
+
+.filter-button-icon {
+  width: 24px; /* アイコンの幅 */
+  height: 24px; /* アイコンの高さ */
+}
+
+.filter-button:hover {
+  background-color: #CCCCCC; /* ホバー時の色 */
+}

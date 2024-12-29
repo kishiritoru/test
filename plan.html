@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0082CA"> <!-- ステータスバーの背景色を指定 -->
+  <title>ぼうそうV - 旅行プラン</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <div id="header-container"></div>
+　<!-- 本文 -->
+  <main class="plan-container"> 
+    <!-- カルーセル -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="assets/1plan.jpg" alt="広告１" class="slide-image">
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/plan2.jpg" alt="広告２" class="slide-image">
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/plan3.jpg" alt="広告３" class="slide-image">
+        </div>
+      </div>
+      <!-- ページネーションとボタンのラッパー -->
+      <div class="swiper-controls">
+        <!-- ページネーション -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+
+    <!-- 以下の内容を追加 -->
+    <section class="plan-description">
+     <h1>旅行プランを探す</h1>
+      <div class="decorative-line">
+        <div class="blue-highlight"></div>
+      </div>
+     <p>
+       SecureTripでは、観光を楽しみながら防災について学べるプランを提案しています。
+     </p>
+    </section>
+    
+    <!-- フィルター選択ボタン -->
+    <section class="plan-filters">
+      <button class="filter-button">
+        <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-map">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" />
+          <path d="M9 4v13" />
+          <path d="M15 7v13" />
+        </svg>
+        都道府県から選ぶ
+      </button>
+      <button class="filter-button">
+        <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+          <path d="M16 3v4" />
+          <path d="M8 3v4" />
+          <path d="M4 11h16" />
+          <path d="M11 15h1" />
+          <path d="M12 15v3" />
+        </svg>
+        季節から選ぶ
+      </button>
+      <button class="filter-button">
+        <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-tag">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M7.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+          <path d="M3 6v5.172a2 2 0 0 0 .586 1.414l7.71 7.71a2.41 2.41 0 0 0 3.408 0l5.592 -5.592a2.41 2.41 0 0 0 0 -3.408l-7.71 -7.71a2 2 0 0 0 -1.414 -.586h-5.172a3 3 0 0 0 -3 3z" />
+        </svg>
+        テーマから選ぶ
+      </button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>

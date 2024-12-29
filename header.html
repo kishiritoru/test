@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- ビューポート設定で viewport-fit=cover を追加 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ぼうそうV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー部分 -->
+  <header class="site-header">
+    <div class="container">
+      <!-- ハンバーガーメニューボタン -->
+      <button class="menu-button" id="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>  
+      <!-- サイトタイトル -->
+      <div class="site-title">
+        <span class="site-subtitle">非日常の旅路に、日常の防災を</span>
+        SecureTrip
+      </div>
+      <!-- ナビゲーションボタン -->
+      <nav class="nav-buttons">
+        <a href="index.html" class="nav-button oval">
+          <svg class="button-icon map-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"  height="24" fill="none" stroke="#0082CA" stroke-width="2">
+            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+          </svg>マップ
+        </a>
+        <a href="plan.html" class="nav-button oval">
+          <svg class="button-icon event-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#0082CA" stroke-width="2">
+            <path d="M14.5 6.5l3 -2.9a2.05 2.05 0 0 1 2.9 2.9l-2.9 3l2.5 7.5l-2.5 2.55l-3.5 -6.55l-3 3v3l-2 2l-1.5 -4.5l-4.5 -1.5l2 -2h3l3 -3l-6.5 -3.5l2.5 -2.5l7.5 2.5z"></path>
+          </svg>旅行
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- サイドメニューバー -->
+  <div class="overlay" id="overlay"></div> <!-- 薄暗くするオーバーレイ-->
+  <div class="side-menu" id="side-menu">
+    <button class="close-button" id="close-button">×</button> <!-- 閉じるボタン -->
+    <ul>
+      <li><a href="index.html">マップ</a></li>
+      <li><a href="plan.html">旅行プラン</a></li>
+      <li><a href="about.html">ぼうそうV説明</a></li>
+      <li><a href="events.html">イベント</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
