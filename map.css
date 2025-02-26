@@ -2,20 +2,54 @@
 .leaflet-popup-content {
     font-size: 18px; /* 文字サイズを大きくする */
     font-weight: bold; /* 文字を太字にする（任意） */
-  }
-  
-  /* ポップアップのタイトルを調整する場合 */
-  .leaflet-popup-content-wrapper {
+}
+
+/* ポップアップのタイトルを調整する場合 */
+.leaflet-popup-content-wrapper {
     padding: 10px; /* ポップアップ内の余白を調整 */
-  }
+}
+
+/* ポップアップ内のタイトル */
+.leaflet-popup-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px;
+    text-align: center; /* タイトルを中央寄せ */
+}
+
+/* ポップアップ内の説明文 */
+.leaflet-popup-content p {
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+
+/* ポップアップ内のボタン */
+.leaflet-popup-content button {
+    display: block;
+    width: 80%;
+    margin: 0 auto; /* ボタンを中央寄せ */
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.leaflet-popup-content button:hover {
+    background-color: #0056b3;
+}
 
 /* マップのスタイル */
 #map {
     height: 500px;
-  }
-  
-  /* バナーのスタイル */
-  #banner {
+    width: 100%;
+    margin-bottom: 0; /* これを追加 */
+}
+
+/* バナーのスタイル */
+#banner {
     position: fixed;
     bottom: -1000px; /* 初期状態で隠れるように下に配置 */
     left: 0;
@@ -26,19 +60,160 @@
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* 上に影をつける */
     transition: bottom 1.3s ease; /* 下からスライドするアニメーション */
     z-index: 1000;
-  }
-  
-  #banner p {
+}
+
+#banner p {
     margin: 0;
     font-size: 16px;
     text-align: center;
-  }
-  
-  #banner.hidden {
+}
+
+#banner.hidden {
     bottom: -1000px; /* 隠れている状態 */
-  }
-  
-  #banner.visible {
+}
+
+#banner.visible {
     bottom: 0; /* 表示状態 */
-  }
-  
+}
+
+/* スマホ専用のスタイル */
+@media (max-width: 600px) {
+    .leaflet-popup-content {
+        font-size: 14px; /* 文字を少し小さく */
+        line-height: 1.2;
+    }
+
+    .leaflet-popup-content h3 {
+        font-size: 14px; /* タイトルも少し小さく */
+    }
+
+    .leaflet-popup-content p {
+        font-size: 12px; /* 説明文をさらに小さく */
+    }
+
+    .leaflet-popup-content button {
+        width: 90%; /* ボタンを広めに */
+        padding: 6px 10px; /* パディングを減らす */
+        font-size: 12px; /* ボタンの文字サイズを小さく */
+    }
+}
+
+/* 同心円アニメーションこれ以下を追加 */
+.circle-overlay {
+    position: fixed;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 0.3);
+    animation: expandCircle 2s ease-out forwards;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+@keyframes expandCircle {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 2000px; /* 十分大きく広がる */
+        height: 2000px;
+        margin-left: -1000px;
+        margin-top: -1000px;
+        opacity: 0.5;
+    }
+}
+
+/* メッセージボックス */
+.message-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    padding: 20px;
+    text-align: center;
+}
+
+.message-box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.message-box p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.message-box button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-box button:hover {
+    background-color: #0056b3;
+}
+
+#badge-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* 追加 */
+    white-space: nowrap; /* 追加 */
+    margin-top: 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+　　scrollbar-width: thin; /* 追加 */
+　　scrollbar-color: #888 #f5f5f5; /* スクロールバー追加 */
+}
+
+.badge {
+    padding: 10px 15px;
+    background-color: #FFFFFF;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    cursor: default;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+#badge-container p {
+    font-size: 14px;
+    color: #aaa; /* 薄い文字色 */
+    text-align: center; /* テキスト中央揃え */
+    margin: 0;
+}
+
+.badge-image {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 3px;
+    border-radius: 50%; /* バッジを丸くする */
+}
+
+/* 以下を追加 */
+#badge-container::-webkit-scrollbar {
+    height: 8px; /* スクロールバーの高さ */
+}
+
+#badge-container::-webkit-scrollbar-thumb {
+    background: #888; /* スクロールバーのつまみの色 */
+    border-radius: 4px; /* スクロールバーのつまみを丸く */
+}
+
+#badge-container::-webkit-scrollbar-track {
+    background: #f5f5f5; /* スクロールバーの背景色 */
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0082CA">
+  <title>ぼうそうV - 栃木旅行プラン１</title>
+  <meta name="location" content="栃木"> <!-- 都道府県タグを追加 -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <div id="header-container"></div>
+
+<!-- 本文 -->
+  <main>
+    <!-- 旅行プランのタイトルと説明文 -->
+    <section class="plan-header">
+      <h1 class="plan-title">栃木旅行プラン</h1>
+      <p class="plan-description">
+        栃木での楽しい1泊2日の旅行プランをご紹介します。観光名所を巡りながら、美味しい食事やリラックスできるスポットを満喫しましょう！
+      </p>
+    </section>
+    
+    <!-- タブのコンテナ -->
+    <div class="tab-container">
+      <!-- タブのヘッダー -->
+      <div class="tab-header">
+        <button class="tab-link active" onclick="openTab(event, 'day1')">1日目</button>
+      </div>
+    
+      <!-- タブの内容 -->
+      <div id="day1" class="tab-content contact-container active" style="display: block;">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">9:00</p>
+              <h3 class="title">宇都宮駅</h3>
+              <p class="description">宇都宮駅から観光スタート！</p>
+              <img src="images/utunomiya.jpg" alt="宇都宮駅">
+              <p class="credit">写真提供：（公社）栃木県観光物産協会</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">9:30</p>
+              <h3 class="title">栃木県防災館（宇都宮市）</h3>
+              <p class="description">地震や火災などのシミュレーションができる防災施設です。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">11:00</p>
+              <h3 class="title">大谷資料館（宇都宮市）</h3>
+              <p class="description">巨大な地下空間が広がる採掘場跡を見学。映画やドラマの撮影地としても有名です！</p>
+              <img src="images/otanisiryokan.jpg" alt="大谷資料館">
+              <p class="credit">写真提供：（公社）栃木県観光物産協会</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">12:30</p>
+              <h3 class="title">昼食（宇都宮市）</h3>
+              <p class="description">宇都宮の有名餃子店で餃子を堪能！いろいろな餃子を食べ比べでみましょう！</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">14:00</p>
+              <h3 class="title">日光東照宮</h3>
+              <p class="description">世界遺産の日光東照宮を見学しましょう。有名な「三猿」や「眠り猫」をチェック！</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">16:30</p>
+              <h3 class="title">華厳の滝</h3>
+              <p class="description">栃木県を代表する名瀑です！大迫力の景観は見ごたえ抜群！</p>
+              <img src="images/kegonnnotaki.jpg" alt="華厳の滝">
+              <p class="credit">写真提供：（公社）栃木県観光物産協会</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>     
+  </main>
+
+  <script src="schedule.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

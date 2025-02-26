@@ -20,13 +20,19 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="assets/1plan.jpg" alt="広告１" class="slide-image">
+          <a href="page1.html">
+            <img src="assets/1plan.JPG" alt="広告１" class="slide-image">
+          </a>
         </div>
         <div class="swiper-slide">
-          <img src="assets/plan2.jpg" alt="広告２" class="slide-image">
+          <a href="page2.html">
+            <img src="assets/plan2.JPG" alt="広告２" class="slide-image">
+          </a>
         </div>
         <div class="swiper-slide">
-          <img src="assets/plan3.jpg" alt="広告３" class="slide-image">
+          <a href="page3.html">
+            <img src="assets/plan3.JPG" alt="広告３" class="slide-image">
+          </a>
         </div>
       </div>
       <!-- ページネーションとボタンのラッパー -->
@@ -37,7 +43,6 @@
     </div>
 
 
-    <!-- 以下の内容を追加 -->
     <section class="plan-description">
      <h1>旅行プランを探す</h1>
       <div class="decorative-line">
@@ -50,39 +55,103 @@
     
     <!-- フィルター選択ボタン -->
     <section class="plan-filters">
-      <button class="filter-button">
-        <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-map">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" />
-          <path d="M9 4v13" />
-          <path d="M15 7v13" />
-        </svg>
-        都道府県から選ぶ
-      </button>
-      <button class="filter-button">
-        <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
-          <path d="M16 3v4" />
-          <path d="M8 3v4" />
-          <path d="M4 11h16" />
-          <path d="M11 15h1" />
-          <path d="M12 15v3" />
-        </svg>
-        季節から選ぶ
-      </button>
-      <button class="filter-button">
-        <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-tag">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M7.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-          <path d="M3 6v5.172a2 2 0 0 0 .586 1.414l7.71 7.71a2.41 2.41 0 0 0 3.408 0l5.592 -5.592a2.41 2.41 0 0 0 0 -3.408l-7.71 -7.71a2 2 0 0 0 -1.414 -.586h-5.172a3 3 0 0 0 -3 3z" />
-        </svg>
-        テーマから選ぶ
-      </button>
+      <!-- 都道府県選択ボタン -->
+      <div class="selectMultiple" id="location-select">
+        <div>
+          <!-- SVGアイコン -->
+          <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-map">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" />
+            <path d="M9 4v13" />
+            <path d="M15 7v13" />
+          </svg>
+          <span class="selected-option">都道府県から選ぶ</span>
+          <div class="arrow"></div>
+      　</div>
+        <ul class="filter-dropdown">
+          <li data-value="東京">東京</li>
+          <li data-value="広島">広島</li>
+          <li data-value="栃木">栃木</li>
+          <li data-value="京都">京都</li>
+          <li data-value="reset">選択を解除する</li>
+        </ul>
+      </div>
+
+      <!-- 季節選択ボタン -->
+      <div class="selectMultiple" id="season-select">
+        <div>
+          <!-- SVGアイコン -->
+          <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+            <path d="M16 3v4" />
+            <path d="M8 3v4" />
+            <path d="M4 11h16" />
+            <path d="M11 15h1" />
+            <path d="M12 15v3" />
+          </svg>
+          <span class="selected-option">季節から選ぶ</span>
+          <div class="arrow"></div>
+        </div>
+        <ul class="filter-dropdown">
+          <li data-value="春">春</li>
+          <li data-value="夏">夏</li>
+          <li data-value="秋">秋</li>
+          <li data-value="冬">冬</li>
+          <li data-value="reset">選択を解除する</li>
+        </ul>
+      </div>
+
+      <!-- テーマ選択ボタン -->
+      <div class="selectMultiple" id="theme-select">
+        <div>
+          <svg class="filter-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-tag">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M7.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            <path d="M3 6v5.172a2 2 0 0 0 .586 1.414l7.71 7.71a2.41 2.41 0 0 0 3.408 0l5.592 -5.592a2.41 2.41 0 0 0 0 -3.408l-7.71 -7.71a2 2 0 0 0 -1.414 -.586h-5.172a3 3 0 0 0 -3 3z" />
+          </svg>
+          <span class="selected-option">テーマから選ぶ</span>
+          <div class="arrow"></div>
+        </div>
+        <ul class="filter-dropdown">
+          <li data-value="自然">自然</li>
+          <li data-value="温泉">温泉</li>
+          <li data-value="グルメ">グルメ</li>
+          <li data-value="歴史">歴史</li>
+          <li data-value="reset">選択を解除する</li>
+        </ul>
+      </div>
+
+      <!-- 検索ボタン -->
+      <button id="search-button" class="search-button">検索</button>
     </section>
+
+    <!-- 検索結果表示 -->
+    <section id="search-results" class="hidden">
+      <div id="plan-list"></div>
+    </section>
+
+    <section class="plan-description">
+     <h1>おすすめのプラン</h1>
+      <div class="decorative-line">
+        <div class="blue-highlight"></div>
+        <div id="all-plan-list"></div>
+      </div>
+      <!-- おすすめプランを表示 -->
+      <div id="all-plan-list" class="plan">
+        <a href="page1.html" class="plan">
+          <img src="assets/page1hiroshima.jpg" alt="広島旅行" class="plan-image">
+        </a>
+        <a href="page2.html" class="plan">
+          <img src="assets/page2tochigi.jpg" alt="栃木旅行" class="plan-image">
+        </a>
+        <a href="page3.html" class="plan">
+          <img src="assets/page3tokyo.jpg" alt="東京旅行" class="plan-image">
+        </a>
+      </div>
+    </section>   
   </main>
 
   <script src="script.js"></script>
-  
 </body>
 </html>

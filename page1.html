@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0082CA">
+  <title>ぼうそうV - 広島旅行プラン１</title>
+  <meta name="location" content="広島"> <!-- 都道府県タグを追加 -->
+  <meta name="season" content="夏"> <!-- 季節タグを追加 -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <div id="header-container"></div>
+
+<!-- 本文 -->
+  <main>
+    <!-- 旅行プランのタイトルと説明文 -->
+    <section class="plan-header">
+      <h1 class="plan-title">広島旅行プラン</h1>
+      <p class="plan-description">
+        広島での楽しい1泊2日の旅行プランをご紹介します。観光名所を巡りながら、美味しい食事やリラックスできるスポットを満喫しましょう！
+      </p>
+    </section>
+    
+    <!-- タブのコンテナ -->
+    <div class="tab-container">
+      <!-- タブのヘッダー -->
+      <div class="tab-header">
+        <button class="tab-link active" onclick="openTab(event, 'day1')">1日目</button>
+        <button class="tab-link" onclick="openTab(event, 'day2')">2日目</button>
+      </div>
+    
+      <!-- タブの内容 -->
+      <div id="day1" class="tab-content contact-container active" style="display: block;">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">10:00</p>
+              <h3 class="title">広島駅</h3>
+              <p class="description">広島駅から観光スタート！</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">10:30</p>
+              <h3 class="title">原爆ドーム・平和記念公園</h3>
+              <p class="description">世界遺産の原爆ドームを見学、平和記念資料館で戦争と復興の歴史を学ぶ。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">12:30</p>
+              <h3 class="title">昼食（広島お好み焼き）</h3>
+              <p class="description">広島の名物を堪能しよう！</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">14:00</p>
+              <h3 class="title">広島市総合防災センター</h3>
+              <p class="description">地震・火災などのシミュレーション体験を通じて、防災知識を身に付けよう！</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">16:00</p>
+              <h3 class="title">広島城</h3>
+              <p class="description">別名「鯉城」とも呼ばれる美しい白を見学！天守閣から広島市内を一望しよう！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="day2" class="tab-content">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">9:30</p>
+              <h3 class="title">宮島・厳島神社</h3>
+              <p class="description">世界遺産の厳島神社を参拝。干潮時には大鳥居の下まで歩いて行くことも？！</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">11:30</p>
+              <h3 class="title">昼食（あなご飯・もみじ饅頭）</h3>
+              <p class="description">名物のあなご飯やもみじ饅頭を堪能！</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">13:00</p>
+              <h3 class="title">弥山ハイキング・ロープウェイ</h3>
+              <p class="description">弥山展望台からは瀬戸内海の絶景を一望できます！</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="time">15:00</p>
+              <h3 class="title">商店街散策・お土産購入</h3>
+              <p class="description">宮島の商店街でお土産探しやカフェを楽しもう！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>     
+  </main>
+
+  <script src="schedule.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

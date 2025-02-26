@@ -1,0 +1,150 @@
+/* 旅行プランのタイトルと説明文 */
+.plan-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.plan-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0082CA;
+  margin-bottom: 10px;
+}
+
+.plan-description {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+
+/* タイムライン全体 */
+.timeline {
+  position: relative;
+  padding-left: 0; /* タイムラインの余白 */
+  border-left: 3px solid #94d4f2; /* 縦線 */
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+/* タイムラインの項目 */
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px; /* 項目間の間隔 */
+}
+
+/* タイムポイント（丸） */
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  left: -12.1px; 
+  width: 15px; /* 丸の直径 */
+  height: 15px; /* 丸の直径 */
+  background-color: #0082CA; /* 丸の色 */
+  border: 3px solid #94d4f2; /* 丸の枠線 */
+  border-radius: 50%; /* 丸にする */
+}
+
+/* 各項目の内容 */
+.timeline-content {
+  margin-left: 30px; /* タイムラインからの余白 */
+}
+
+/* 時間 */
+.time {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+/* 見出し */
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* 説明文 */
+.description {
+  font-size: 14px;
+  color: white;
+  line-height: 1.5;
+}
+
+/* タブコンテナ */
+.tab-container {
+  max-width: 600px;
+  margin: 20px auto; /* ヘッダーの下に間隔を作る */
+}
+
+/* タブヘッダー */
+.tab-header {
+  display: flex;
+  margin-left: 50px;
+  margin-bottom: 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.tab-link {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  background-color: #e0e0e0; /* 非アクティブ時の背景色 */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 10px 10px 0 0;
+}
+
+.tab-link.active {
+  background-color: #0082CA; /* アクティブ時の背景色 */
+  color: white;
+  border-bottom: none; /* 下枠線を消して一体化 */
+  border-radius: 10px 10px 0 0;
+}
+
+/* ホバー時のスタイル */
+.tab-link:hover {
+  background-color: #0082CA;
+  color: white;
+}
+
+/* 最後のタブの区切り線を非表示 */
+.tab-link:last-child {
+  border-right: none;
+}
+
+/* タブの内容 */
+/* タブの内容を囲む枠線 */
+.tab-content {
+  border: 2px solid #0082CA;
+  border-top: none; /* タブヘッダーと一体化 */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 20px;
+  background-color: #0082CA;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* 画像関連 */
+img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+.credit {
+  font-size: 0.7em;
+  color: #A9D0F5;
+  text-align: center;
+  margin-bottom: 20px;
+}

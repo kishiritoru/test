@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   padding: 0;
-  /* 以下の2つを追加 */
+  height: 100%; /* 追加 */
   max-width: 100%; /* 横幅をビューポートに制限 */
   overflow-x: hidden; /* 横スクロールを無効化 */
 }
@@ -140,8 +140,7 @@ body {
 }
 
 .map {
-  height: 500px;
-  background-color: #EEE;
+  height: 100%;
 }
 
 /* イベント部分 */
@@ -187,7 +186,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
-  z-index: 999; /* メニューより下、ボタンより上 */
+  z-index: 1999; /* メニューより下、ボタンより上 */
   opacity: 0; /* 初期状態では透明 */
   visibility: hidden; /* 初期状態では非表示 */
   transition: opacity 0.3s ease; /* スムーズなアニメーション */
@@ -217,7 +216,7 @@ body {
   background-color: #E1F5FE; /* メニューバーの背景色 */
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease; /* アニメーション */
-  z-index: 1000;
+  z-index: 2000;
   padding: 20px;
 }
 
@@ -317,7 +316,7 @@ body {
 /* カルーセルの調整 */
 .swiper-container {
   width: 100%; /* カルーセルの幅 */
-  height: 300px; /* 高さ */
+  height: 400px; /* 高さ */
   margin-top: -5px;
   overflow: hidden; /* 横スクロールを防ぐ */
   max-width: 100%; /* 画面幅を超えないようにするこれを追加 */
@@ -375,34 +374,169 @@ body {
 /* 検索ボタン */
 .plan-filters {
   display: flex;
-  flex-direction: column; /* ボタンを縦に並べる */
-  align-items: center; /* 中央揃え */
-  margin-top: 20px; /* 上部に余白 */
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
+
+
+.selectMultiple div {
+  display: flex !important;
+  align-items: center  !important;
+  justify-content: space-between  !important;
+}
+
+.selected-option {
+  color: #333;
+  text-align: left;
+  font-weight: bold;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #0082CA;
+  border-bottom: 2px solid #0082CA;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+  position: absolute; /* 位置指定 */
+  right: 20px; /* 右端から15px */
+  top: 35%; /* 上下中央揃え */
+  transform-origin: center;
+}
+
+.selectMultiple.open .arrow {
+  transform: rotate(135deg);
+}
+
+.selectMultiple.open .filter-dropdown {
+  display: block !important; /* プルダウンを開く */
+}
+
+/* ボタンのデザイン */
 .filter-button {
   width: 80%; /* ボタンの横幅 */
   max-width: 400px; /* ボタンの最大幅 */
-  padding: 15px; /* ボタンの上下左右の余白 */
-  margin-bottom: 10px; /* ボタン同士の間隔 */
-  font-size: 1.2rem; /* ボタン内の文字サイズ */
   background-color: #FFFFFF; /* ボタンの背景色 */
   color: #000000; /* ボタンの文字色 */
-  border: 1px solid #000000; /* 黒の枠線 */
-  border-radius: 8px; /* ボタンの角を丸める */
-  cursor: pointer; /* カーソルをポインタに変更 */
-  text-align: center; /* 文字を中央揃え */
-  display: flex; 
-  justify-content: flex-start; /* これを変更 */
-  align-items: center; 
-  gap: 10px; 
+  padding: 15px; /* ボタンの上下左右の余白 */
+  margin-bottom: 10px; /* ボタン同士の間隔 */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem; /* ボタン内の文字サイズ */
+  text-align: left;
+  display: flex;
+  align-items: center; /* アイコンとテキストを中央揃え */
+  border: none;
+  justify-content: flex-start; /* 左詰め */
+  position: relative;
+  padding-left: 30px;
+}
+
+/* フィルターボタンの基本スタイル */
+.selectMultiple {
+  width: 80%; /* ボタンの横幅 */
+  max-width: 400px; /* ボタンの最大幅 */
+  margin-bottom: 10px; /* ボタン同士の間隔 */
+  position: relative;
+  background: #FFFFFF;
+  padding: 15px; /* ボタンの上下左右の余白 */
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #0082CA;
+  display: flex;
+  align-items: center;  /* アイコンとテキストの位置を揃える */
+  justify-content: flex-start; /* 左詰め */
+  text-align: left; /* 文字を中央揃え */
 }
 
 .filter-button-icon {
-  width: 24px; /* アイコンの幅 */
-  height: 24px; /* アイコンの高さ */
+  width: 24px  !important; /* アイコンの幅 */
+  height: 24px  !important; /* アイコンの高さ */
+  margin-left: 15px  !important; /* ボタンの左端から15pxの位置 */
+  margin-right: 15px  !important; /* アイコンとテキストの間隔 */
+  flex-shrink: 0  !important; /* アイコンが小さくならないように */
 }
 
 .filter-button:hover {
   background-color: #CCCCCC; /* ホバー時の色 */
 }
+
+.plan {
+  margin: 20px 10px;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.plan a {
+  text-decoration: none;
+  color: #0082CA;
+}
+
+.plan a:hover {
+  text-decoration: underline;
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #0082CA;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-dropdown li {
+  padding: 10px 15px;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.3s ease;
+}
+
+.filter-dropdown li:hover {
+  background: #0082CA;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 検索ボタン */
+.search-button {
+  width: 88%; /* ボタンの横幅 */
+  max-width: 400px; /* ボタンの最大幅 */
+  background-color: #0082CA; /* 背景色（青） */
+  color: #FFFFFF; /* 文字色（白） */
+  padding: 15px; /* 余白 */
+  margin-bottom: 10px; /* ボタン同士の間隔 */
+  border-radius: 8px; /* 角を丸く */
+  cursor: pointer;
+  font-size: 1.2rem; /* 文字サイズ */
+  text-align: center; /* 文字を中央揃え */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* 検索ボタンのホバー時 */
+.search-button:hover {
+  background-color: #006bb3; /* 少し濃い青 */
+}
+
+.plan-image {
+  width: 95%; /* 横幅 */
+  max-width: 400px; /* 最大幅を設定 */
+  height: auto; /* 縦横比を維持 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影をつける */
+  transition: transform 0.3s ease;
+}
+
