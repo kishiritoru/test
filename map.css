@@ -41,11 +41,22 @@
     background-color: #0056b3;
 }
 
+html, body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: -7px;
+    padding: 0;
+    overflow: hidden; /* ← スクロールを無効にする */
+}
 /* マップのスタイル */
 #map {
-    height: 500px;
-    width: 100%;
+    
+    width: 100vw;  /* ビューポート幅を100%に */
+    height: 100vh; /* ビューポート高さを100%に */
+    margin: 0;
     margin-bottom: 0; /* これを追加 */
+    max-height: 100%;
 }
 
 /* バナーのスタイル */
