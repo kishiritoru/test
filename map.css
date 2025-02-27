@@ -48,10 +48,10 @@ html, body {
 #map {
     
     width: 100vw;  /* ビューポート幅を100%に */
-    height: 100vh; /* ビューポート高さを100%に */
+    height: 85vh; /* ビューポート高さを85%に */
     margin: 0;
     margin-bottom: 0; /* これを追加 */
-    max-height: 100%;
+    
 }
 
 /* バナーのスタイル */
