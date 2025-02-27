@@ -48,7 +48,7 @@ html, body {
 #map {
     
     width: 100vw;  /* ビューポート幅を100%に */
-    height: 85vh; /* ビューポート高さを85%に */
+    height: 84vh; /* ビューポート高さを85%に */
     margin: -20px;
     margin-bottom: 0; /* これを追加 */
     
